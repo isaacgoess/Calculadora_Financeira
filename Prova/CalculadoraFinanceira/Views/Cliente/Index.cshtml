@@ -20,19 +20,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Email)
         </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.ConfirmarEmail)
-        </th>
-
         <th>
             @Html.DisplayNameFor(model => model.Senha)
         </th>
-
-        <th>
-            @Html.DisplayNameFor(model => model.ConfirmarSenha)
-        </th>
-
         <th></th>
     </tr>
 
@@ -44,27 +34,16 @@
         <td>
             @Html.DisplayFor(modelItem => item.DataAniversario)
         </td>
-        
         <td>
-            @Html.DisplayNameFor(model => model.Email)
+            @Html.DisplayFor(modelItem => item.Email)
         </td>
-
         <td>
-            @Html.DisplayNameFor(model => model.ConfirmarEmail)
+            @Html.DisplayFor(modelItem => item.Senha)
         </td>
-
         <td>
-            @Html.DisplayNameFor(model => model.Senha)
-        </td>
-
-        <td>
-            @Html.DisplayNameFor(model => model.ConfirmarSenha)
-        </td>
-
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

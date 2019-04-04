@@ -19,7 +19,6 @@ namespace CalculadoraFinanceira.Models
         public CalculadoraFinanceiraContext() : base("name=CalculadoraFinanceiraContext")
         {
         }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new ClienteMap());

@@ -25,7 +25,7 @@ namespace CalculadoraFinanceira.Models.Classes
 
         [Display(Name = "Confirmação do Email")]
         [EmailAddress]
-        [System.ComponentModel.DataAnnotations.Compare("email", ErrorMessage = "Os emails não se coincidem!")]
+        [System.ComponentModel.DataAnnotations.Compare("Email", ErrorMessage = "Os emails não se coincidem!")]
         public String ConfirmarEmail { get; set; }
 
         public String Senha { get; set; }
@@ -36,13 +36,18 @@ namespace CalculadoraFinanceira.Models.Classes
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
+            if (!this.Senha.Equals(this.ConfirmarSenha))
+            {
+                yield return
+              new ValidationResult("Senhas precisam ser diferentes",
+                                new[] { "Senha", "ConfirmacaoSenha" });
+            }
             if (!this.Email.Equals(this.ConfirmarEmail))
             {
                 yield return
                     new ValidationResult("Email são diferentes", new[] { "Email", "Confirmar Email" });
             }
         }
-
     }
 
 }
