@@ -45,8 +45,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.8.2.0\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
@@ -181,11 +187,15 @@
     <Compile Include="Models\Classes\Cliente.cs" />
     <Compile Include="Models\Classes\Despesa.cs" />
     <Compile Include="Models\Classes\ListarDespesa.cs" />
+    <Compile Include="Models\PlanilhaDBInitializer.cs" />
+    <Compile Include="Models\Validator\ListarDespesaValidator.cs" />
     <Compile Include="Models\FluentAPI\ClienteMap.cs" />
     <Compile Include="Models\FluentAPI\DespesaMap.cs" />
     <Compile Include="Models\FluentAPI\ListarDespesaMap.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Validator\ClienteValidator.cs" />
+    <Compile Include="Models\Validator\DespesaValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -243,21 +253,21 @@
     <Content Include="Views\Manage\ManageLogins.cshtml" />
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Views\Cliente\Create.cshtml" />
-    <Content Include="Views\Cliente\Delete.cshtml" />
-    <Content Include="Views\Cliente\Details.cshtml" />
-    <Content Include="Views\Cliente\Edit.cshtml" />
-    <Content Include="Views\Cliente\Index.cshtml" />
-    <Content Include="Views\Despesa\Create.cshtml" />
-    <Content Include="Views\Despesa\Delete.cshtml" />
-    <Content Include="Views\Despesa\Details.cshtml" />
-    <Content Include="Views\Despesa\Edit.cshtml" />
-    <Content Include="Views\Despesa\Index.cshtml" />
     <Content Include="Views\ListarDespesa\Create.cshtml" />
     <Content Include="Views\ListarDespesa\Delete.cshtml" />
     <Content Include="Views\ListarDespesa\Details.cshtml" />
     <Content Include="Views\ListarDespesa\Edit.cshtml" />
     <Content Include="Views\ListarDespesa\Index.cshtml" />
+    <Content Include="Views\Despesa\Create.cshtml" />
+    <Content Include="Views\Despesa\Delete.cshtml" />
+    <Content Include="Views\Despesa\Details.cshtml" />
+    <Content Include="Views\Despesa\Edit.cshtml" />
+    <Content Include="Views\Despesa\Index.cshtml" />
+    <Content Include="Views\Cliente\Create.cshtml" />
+    <Content Include="Views\Cliente\Delete.cshtml" />
+    <Content Include="Views\Cliente\Details.cshtml" />
+    <Content Include="Views\Cliente\Edit.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

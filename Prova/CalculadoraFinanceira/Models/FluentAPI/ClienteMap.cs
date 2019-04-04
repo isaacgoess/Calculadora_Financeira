@@ -17,8 +17,8 @@ namespace CalculadoraFinanceira.Models.FluentAPI
             HasKey(c => c.Id).
                     Property(c => c.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(c => c.Nome).HasMaxLength(255).IsRequired().HasColumnType("VarChar");
-            Property(c => c.DataAniversario).HasPrecision(10).IsRequired().HasColumnType("DateTime");
-            Property(c => c.Email).IsRequired().HasColumnType("VarChar");
+            Property(c => c.DataAniversario).IsRequired().HasColumnType("Datetime2");
+            Property(c => c.Email).HasMaxLength(255).IsRequired().HasColumnType("Varchar");
             Ignore(c => c.ConfirmarSenha);
             Ignore(c => c.ConfirmarEmail);
         }

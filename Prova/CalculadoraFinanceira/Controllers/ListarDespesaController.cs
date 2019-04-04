@@ -34,13 +34,13 @@ namespace CalculadoraFinanceira.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ListarDespesa tipoDespesa = db.ListarDespesas.Where(tipo => tipo.Situacao == true && tipo.Id == id).SingleOrDefault<ListarDespesa>();
+            ListarDespesa listarDespesa = db.ListarDespesas.Where(tipo => tipo.Situacao == true && tipo.Id == id).SingleOrDefault<ListarDespesa>();
 
-            if (tipoDespesa == null)
+            if (listarDespesa == null)
             {
                 return HttpNotFound();
             }
-            return View(tipoDespesa);
+            return View(listarDespesa);
         }
 
         // GET: TipoDespesa/Create

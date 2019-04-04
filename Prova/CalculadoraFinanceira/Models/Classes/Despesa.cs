@@ -1,6 +1,8 @@
-﻿using System;
+﻿using CalculadoraFinanceira.Models.Validator;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -25,5 +27,11 @@ namespace CalculadoraFinanceira.Models.Classes
             Variavel = 1
         }
 
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            var validator = new DespesaValidator();
+            var result = validator.Validate(this);
+            return result.Errors.Select(erro => new ValidationResult(erro.ErrorMessage, new[] { erro.PropertyName }));
+        }
     }
 }
