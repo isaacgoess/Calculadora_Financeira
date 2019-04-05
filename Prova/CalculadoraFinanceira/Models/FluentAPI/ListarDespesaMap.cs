@@ -16,6 +16,7 @@ namespace CalculadoraFinanceira.Models.FluentAPI
             HasKey(tipo => tipo.Id).
                     Property(Cliente => Cliente.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(tipo => tipo.Nome).HasMaxLength(255).IsRequired().HasColumnType("Varchar");
+            Property(tipo => tipo.Caracteristica).HasMaxLength(255).IsRequired().HasColumnType("Varchar");
             Property(tipo => tipo.Situacao).IsRequired().HasColumnType("bit");
         }
     }

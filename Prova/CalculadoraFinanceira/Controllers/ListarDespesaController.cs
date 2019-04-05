@@ -54,7 +54,7 @@ namespace CalculadoraFinanceira.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Situacao")] ListarDespesa tipoDespesa)
+        public ActionResult Create([Bind(Include = "Id,Nome,Situacao,Caracteristica")] ListarDespesa tipoDespesa)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace CalculadoraFinanceira.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,Situacao")] ListarDespesa tipoDespesa)
+        public ActionResult Edit([Bind(Include = "Id,Nome,Situacao,Caracteristica")] ListarDespesa tipoDespesa)
         {
             if (ModelState.IsValid)
             {

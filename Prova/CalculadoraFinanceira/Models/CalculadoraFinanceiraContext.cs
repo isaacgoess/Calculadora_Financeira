@@ -1,4 +1,5 @@
-﻿using CalculadoraFinanceira.Models.FluentAPI;
+﻿using CalculadoraFinanceira.Models.Classes;
+using CalculadoraFinanceira.Models.FluentAPI;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -24,6 +25,10 @@ namespace CalculadoraFinanceira.Models
             modelBuilder.Configurations.Add(new ClienteMap());
             modelBuilder.Configurations.Add(new DespesaMap());
             modelBuilder.Configurations.Add(new ListarDespesaMap());
+            modelBuilder.Configurations.Add(new ReceitaMap());
+            modelBuilder.Configurations.Add(new TipoReceitaMap());
+
+            modelBuilder.ComplexType<ParcelaReceita>();
 
             base.OnModelCreating(modelBuilder);
         }
@@ -31,5 +36,7 @@ namespace CalculadoraFinanceira.Models
         public System.Data.Entity.DbSet<CalculadoraFinanceira.Models.Classes.Cliente> Clientes { get; set; }
         public System.Data.Entity.DbSet<CalculadoraFinanceira.Models.Classes.Despesa> Despesas { get; set; }
         public System.Data.Entity.DbSet<CalculadoraFinanceira.Models.Classes.ListarDespesa> ListarDespesas { get; set; }
+        public System.Data.Entity.DbSet<CalculadoraFinanceira.Models.Classes.Receita> Receitas { get; set; }
+        public System.Data.Entity.DbSet<CalculadoraFinanceira.Models.Classes.TipoReceita> TipoReceitas { get; set; }
     }
 }

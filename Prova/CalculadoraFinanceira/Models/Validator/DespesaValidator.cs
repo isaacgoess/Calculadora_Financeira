@@ -25,7 +25,7 @@ namespace CalculadoraFinanceira.Models.Validator
                                  .Where(x => x.Nome.ToLower() == nome.ToLower())
                                  .Count();
 
-           return result == 0;
+            return result == 0;
         }
 
 
@@ -44,3 +44,4 @@ namespace CalculadoraFinanceira.Models.Validator
         }
     }
 }
+

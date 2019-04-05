@@ -7,7 +7,7 @@ using System.Web;
 
 namespace CalculadoraFinanceira.Models.Classes
 {
-    public class Cliente
+    public class Cliente : IValidatableObject
     {
         public int Id { get; set; }
 
@@ -35,8 +35,11 @@ namespace CalculadoraFinanceira.Models.Classes
         {
             var validator = new ClienteValidator();
             var result = validator.Validate(this);
-            // return result.Errors.Select(erro => new ValidationResult(erro.ErrorMessage, new[] { erro.PropertyName }));
-            if (!this.Senha.Equals(this.ConfirmarSenha))
+            return result.Errors.Select(erro => new ValidationResult(erro.ErrorMessage, new[] { erro.PropertyName }));
+    
+            
+            
+            /*       if (!this.Senha.Equals(this.ConfirmarSenha))
             {
                 yield return
               new ValidationResult("Senhas precisam ser diferentes",
@@ -45,10 +48,9 @@ namespace CalculadoraFinanceira.Models.Classes
             if (!this.Email.Equals(this.ConfirmarEmail))
             {
                 yield return
-                    new ValidationResult("Email são diferentes", new[] { "Email", "Confirmar Email" });
+                    new ValidationResult("Email são diferentes", new[] { "Email", "Confirmar Email" });*/
             }
 
         }
     }
 
-}

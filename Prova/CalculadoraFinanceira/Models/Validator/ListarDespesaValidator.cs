@@ -19,9 +19,9 @@ namespace CalculadoraFinanceira.Models.Validator
             RuleFor(listarDespesa => listarDespesa.Nome).Must(UniqueName).WithMessage("Tipo de Categoria de Despesa Cadastrada");
         }
 
-    
+
         private bool UniqueName(String nome)
-       {
+        {
             var result = this.db.ListarDespesas
                                  .Where(x => x.Nome.ToLower() == nome.ToLower())
                                  .Count();

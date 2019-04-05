@@ -12,8 +12,10 @@ namespace CalculadoraFinanceira.Models.Validator
     {
         public ClienteValidator()
         {
-    //        RuleFor(cliente => cliente.Email).EmailAddress().WithMessage("E-mail inválido!");
-    //        RuleFor(cliente => cliente.Email).Equal(cliente => cliente.ConfirmarEmail).WithMessage("Os e-mails precisam ser iguais!");
+            RuleFor(cliente => cliente.Email).EmailAddress().WithMessage("E-mail inválido!");
+            RuleFor(cliente => cliente.Email).Equal(cliente => cliente.ConfirmarEmail).WithMessage("Os e-mails precisam ser iguais!");
+            RuleFor(cliente => cliente.Senha).NotEmpty().WithMessage("Senha Obrigatória");
+            RuleFor(cliente => cliente.Senha).Equal(cliente => cliente.ConfirmarSenha).WithMessage("Senhas precisam ser Iguais");
             RuleFor(cliente => cliente.DataAniversario).Must(ValidarData).WithMessage("Data inválida");
         }
 
