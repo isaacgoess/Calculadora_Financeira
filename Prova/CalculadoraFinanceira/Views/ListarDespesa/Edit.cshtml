@@ -34,18 +34,26 @@
             </div>
         </div>
     </div>
-
+    
     <div class="form-group">
-        @Html.LabelFor(model => model.Caracteristica, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.Caracteristica, new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            <div class="col-md-10">
-                @Html.RadioButton("Caracteristica", "g", false) Gasto com Produto ou Serviço
-                @Html.RadioButton("Caracteristica", "a", true) Aplicação em Investimentos
-                @Html.RadioButton("Caracteristica", "t", false) Transferência entre Contas
-            </div>
+            @Html.RadioButton("Caracteristica", "Gasto com Produto ou Serviço", false) Gasto com Produto ou Serviço
+            @Html.RadioButton("Caracteristica", "Aplicação em Investimentos", true) Aplicação em Investimentos
+            @Html.RadioButton("Caracteristica", "Transferência entre Contas", false) Transferência entre Contas
         </div>
     </div>
 
+    @*
+        <div class="form-group">
+            @Html.LabelFor(model => model.Caracteristica, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButton("Caracateristica", "g", false) Gasto com Produto ou Serviço
+                @Html.RadioButton("Caracateristica", "a", true) Aplicação em Investimentos
+                @Html.RadioButton("Caracateristica", "t", false) Transferência entre Contas
+            </div>
+        </div>
+    *@
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Save" class="btn btn-default" />

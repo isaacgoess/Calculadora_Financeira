@@ -1,7 +1,7 @@
 ﻿using CalculadoraFinanceira.Models.Classes;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Transactions;
 
 namespace CalculadoraFinanceira.Models
 {
@@ -9,17 +9,21 @@ namespace CalculadoraFinanceira.Models
     {
         protected override void Seed(CalculadoraFinanceiraContext context)
         {
-            using (var dbTransaction = context.Database.BeginTransaction())
+            TransactionOptions transactionOption = new TransactionOptions();
+            transactionOption.IsolationLevel = IsolationLevel.Serializable;
+
+            using (var scope = new TransactionScope(TransactionScopeOption.Required, transactionOption))
             {
+
                 try
                 {
                     #region Tipo Despesas
                     IList<ListarDespesa> tipoDespesas = new List<ListarDespesa>();
 
-                    tipoDespesas.Add(new ListarDespesa() { Nome = "Alimentação", Situacao = true, Caracteristica = "a" });
-                    tipoDespesas.Add(new ListarDespesa() { Nome = "Educação", Situacao = true, Caracteristica = "a" });
-                    tipoDespesas.Add(new ListarDespesa() { Nome = "Saúde", Situacao = true, Caracteristica = "a" });
-                    tipoDespesas.Add(new ListarDespesa() { Nome = "Moradia", Situacao = true, Caracteristica = "a" });
+                    tipoDespesas.Add(new ListarDespesa() { Nome = "Alimentação", Situacao = true, Caracteristica = "Aplicação em Investimentos" });
+                    tipoDespesas.Add(new ListarDespesa() { Nome = "Educação", Situacao = true, Caracteristica = "Aplicação em Investimentos" });
+                    tipoDespesas.Add(new ListarDespesa() { Nome = "Saúde", Situacao = true, Caracteristica = "Aplicação em Investimentos" });
+                    tipoDespesas.Add(new ListarDespesa() { Nome = "Moradia", Situacao = true, Caracteristica = "Aplicação em Investimentos" });
 
                     context.ListarDespesas.AddRange(tipoDespesas);
                     context.SaveChanges();
@@ -80,19 +84,15 @@ namespace CalculadoraFinanceira.Models
                     despesas.Add(despesa);
                     context.Despesas.AddRange(despesas);
                     context.SaveChanges();
-                }
 
-                //Comitando a transação
-                //                    db();
-                #endregion
-                catch (Exception e)
-                {
-                    dbTransaction.Rollback();
-                    throw;
+                    //Comitando a transação
+                    scope.Complete();
+                    #endregion
                 }
-                finally
+                catch
                 {
-                    dbTransaction.Commit();
+                  //  dbTransaction.Rollback();
+                    throw;
                 }
             }
             base.Seed(context);

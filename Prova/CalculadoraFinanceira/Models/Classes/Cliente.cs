@@ -36,21 +36,22 @@ namespace CalculadoraFinanceira.Models.Classes
             var validator = new ClienteValidator();
             var result = validator.Validate(this);
             return result.Errors.Select(erro => new ValidationResult(erro.ErrorMessage, new[] { erro.PropertyName }));
-    
-            
-            
-            /*       if (!this.Senha.Equals(this.ConfirmarSenha))
-            {
-                yield return
-              new ValidationResult("Senhas precisam ser diferentes",
-                                new[] { "Senha", "ConfirmarSenha" });
-            }
-            if (!this.Email.Equals(this.ConfirmarEmail))
-            {
-                yield return
-                    new ValidationResult("Email são diferentes", new[] { "Email", "Confirmar Email" });*/
-            }
+
+            /*
+
+                         if (!this.Senha.Equals(this.ConfirmarSenha))
+                  {
+                      yield return
+                    new ValidationResult("Senhas precisam ser diferentes",
+                                      new[] { "Senha", "ConfirmarSenha" });
+                  }
+                  if (!this.Email.Equals(this.ConfirmarEmail))
+                  {
+                      yield return
+                          new ValidationResult("Email são diferentes", new[] { "Email", "Confirmar Email" });*/
 
         }
+
     }
 
+}

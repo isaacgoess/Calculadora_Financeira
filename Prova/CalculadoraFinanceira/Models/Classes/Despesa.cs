@@ -8,7 +8,7 @@ using System.Web;
 
 namespace CalculadoraFinanceira.Models.Classes
 {
-    public class Despesa // : IValidatableObject
+    public class Despesa   : IValidatableObject
     {
         public int Id { get; set; }
         public String Descricao { get; set; }
@@ -27,12 +27,13 @@ namespace CalculadoraFinanceira.Models.Classes
             Variavel = 1
         }
 
-       /* public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        
+       public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             var validator = new DespesaValidator();
             var result = validator.Validate(this);
             return result.Errors.Select(erro => new ValidationResult(erro.ErrorMessage, new[] { erro.PropertyName }));
-        } */
+        } 
     }
 
 }
