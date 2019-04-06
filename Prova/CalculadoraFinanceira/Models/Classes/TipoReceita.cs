@@ -18,7 +18,7 @@ namespace CalculadoraFinanceira.Models.Classes
             var validator = new TipoReceitaValidator();
             var result = validator.Validate(this);
             return result.Errors.Select(erro => new ValidationResult(erro.ErrorMessage, new[] { erro.PropertyName }));
-        } 
+        }
     }
 }
 
