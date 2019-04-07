@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using CalculadoraFinanceira.Models;
 using CalculadoraFinanceira.Models.Classes;
@@ -41,7 +38,6 @@ namespace CalculadoraFinanceira.Controllers
         public ActionResult Create()
         {
             ViewBag.IdTipoReceita = new SelectList(db.TipoReceitas, "Id", "Nome");
-            //ViewBag.IdReceita = new SelectList(db.Receitas, "Id", "Descricao");
             return View();
         }
 
@@ -60,7 +56,6 @@ namespace CalculadoraFinanceira.Controllers
             }
 
             ViewBag.IdTipoReceita = new SelectList(db.TipoReceitas, "Id", "Nome", receita.IdTipoReceita);
-            //  ViewBag.IdReceita = new SelectList(db.Receitas, "Id", "Descricao");
             return View(receita);
         }
 
@@ -76,8 +71,7 @@ namespace CalculadoraFinanceira.Controllers
             {
                 return HttpNotFound();
             }
-            //    ViewBag.IdTipoReceita = new SelectList(db.TipoReceitas, "Id", "Nome", receita.IdTipoReceita);
-            ViewBag.IdReceita = new SelectList(db.Receitas, "Id", "Descricao");
+            ViewBag.IdTipoReceita = new SelectList(db.TipoReceitas, "Id", "Nome", receita.IdTipoReceita);
             return View(receita);
         }
 
@@ -95,7 +89,6 @@ namespace CalculadoraFinanceira.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.IdTipoReceita = new SelectList(db.TipoReceitas, "Id", "Nome", receita.IdTipoReceita);
-            // ViewBag.IdReceita = new SelectList(db.Receitas, "Id", "Descricao");
             return View(receita);
         }
 

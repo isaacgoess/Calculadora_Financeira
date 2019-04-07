@@ -28,7 +28,6 @@ namespace CalculadoraFinanceira.Models.Classes
         }
     }
 
-
     public class ParcelaReceita
     {
         public TipoParcela FormaReceita { get; set; }
@@ -39,9 +38,10 @@ namespace CalculadoraFinanceira.Models.Classes
             Unica,
             [Description("Parcelada")]
             Parcelado
-        }
+          }
 
         public int NumeroParcelas { get; set; }
-    }
 
+    }
 }
+

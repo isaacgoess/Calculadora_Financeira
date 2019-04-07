@@ -1,4 +1,5 @@
-﻿using CalculadoraFinanceira.Models.Classes;
+﻿/*
+using CalculadoraFinanceira.Models.Classes;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -28,3 +29,5 @@ namespace CalculadoraFinanceira.Models.Validator
         }
     }
 }
+
+*/

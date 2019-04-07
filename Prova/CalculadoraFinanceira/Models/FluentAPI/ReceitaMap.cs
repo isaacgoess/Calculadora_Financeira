@@ -19,7 +19,7 @@ namespace CalculadoraFinanceira.Models.FluentAPI
             HasKey(receita => receita.Id).
                     Property(receita => receita.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-           // ComplexTypeConfiguration<ParcelaReceita>;
+           //ComplexTypeConfiguration<ParcelaReceita>;
 
             //one-to-many com apenas um lado mapeado
             HasRequired<TipoReceita>(receita => receita.TipoReceita)

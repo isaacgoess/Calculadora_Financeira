@@ -1,4 +1,5 @@
-﻿using CalculadoraFinanceira.Models.Classes;
+﻿/*
+ using CalculadoraFinanceira.Models.Classes;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -9,11 +10,11 @@ namespace CalculadoraFinanceira.Models.Validator
 {
     public class DespesaValidator : AbstractValidator<Despesa>
     {
-        CalculadoraFinanceiraContext db = null;
+       CalculadoraFinanceiraContext db = null;
 
         public DespesaValidator()
         {
-            this.db = new CalculadoraFinanceiraContext();
+         this.db = new CalculadoraFinanceiraContext();
             RuleFor(listarDespesa => listarDespesa.Descricao).NotEmpty().WithMessage("Descrição Obrigatória!");
             RuleFor(listarDespesa => listarDespesa.Valor).GreaterThan(0).WithMessage("Despesa precisa ser maior que zero!");
             RuleFor(listarDespesa => listarDespesa.TipoDespesaId).Must(NotExistsTipoDespesa).WithMessage("Tipo de Despesa inexistente!");
@@ -29,11 +30,11 @@ namespace CalculadoraFinanceira.Models.Validator
         }
 
 
-        /// <summary>
-        /// Método que valida se existe um tipo de despesa
-        /// </summary>
-        /// <param name="tipoDespesaId">Id único de uma despesa</param>
-        /// <returns></returns>
+        // <summary>
+        // Método que valida se existe um tipo de despesa
+        // </summary>
+        // <param name = "tipoDespesaId" > Id único de uma despesa</param>
+        // <returns></returns>
         private bool NotExistsTipoDespesa(int tipoDespesaId)
         {
             var result = this.db.ListarDespesas
@@ -45,3 +46,4 @@ namespace CalculadoraFinanceira.Models.Validator
     }
 }
 
+*/

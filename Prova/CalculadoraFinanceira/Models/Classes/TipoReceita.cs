@@ -7,18 +7,18 @@ using System.Web;
 
 namespace CalculadoraFinanceira.Models.Classes
 {
-    public class TipoReceita  : IValidatableObject
+    public class TipoReceita // : IValidatableObject
     {
         public int Id { get; set; }
         public String Nome { get; set; }
 
 
-        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            var validator = new TipoReceitaValidator();
-            var result = validator.Validate(this);
-            return result.Errors.Select(erro => new ValidationResult(erro.ErrorMessage, new[] { erro.PropertyName }));
-        }
+        //IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        //{
+        //    var validator = new TipoReceitaValidator();
+        //    var result = validator.Validate(this);
+        //    return result.Errors.Select(erro => new ValidationResult(erro.ErrorMessage, new[] { erro.PropertyName }));
+        //}
     }
 }
 

@@ -1,4 +1,6 @@
-﻿using CalculadoraFinanceira.Models.Classes;
+﻿/*
+
+using CalculadoraFinanceira.Models.Classes;
 using FluentValidation;
 using System;
 using System.Text.RegularExpressions;
@@ -7,11 +9,11 @@ namespace CalculadoraFinanceira.Models.Validator
 {
     public class ReceitaValidator : AbstractValidator<Receita>
     {
-        CalculadoraFinanceiraContext db = null;
+       // CalculadoraFinanceiraContext db = null;
 
         public ReceitaValidator()
         {
-            this.db = new CalculadoraFinanceiraContext();
+         //   this.db = new CalculadoraFinanceiraContext();
             RuleFor(receita => receita.Descricao).NotEmpty().WithMessage("Descrição Obrigatória!");
             RuleFor(receita => receita.Valor).GreaterThan(0).WithMessage("Despesa precisa ser maior que zero!");
             RuleFor(receita => receita.DataRecebimento).Must(DataValida).WithMessage("Data inválida!");
@@ -37,3 +39,5 @@ namespace CalculadoraFinanceira.Models.Validator
 
 
 }
+
+*/

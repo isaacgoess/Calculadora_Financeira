@@ -7,7 +7,7 @@ using System.Web;
 
 namespace CalculadoraFinanceira.Models.Classes
 {
-    public class Cliente : IValidatableObject
+    public class Cliente // : IValidatableObject
     {
         public int Id { get; set; }
 
@@ -31,7 +31,8 @@ namespace CalculadoraFinanceira.Models.Classes
         [Display(Name = "Confirmação de Senha")]
         public String ConfirmarSenha { get; set; }
 
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+/*
+ public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             var validator = new ClienteValidator();
             var result = validator.Validate(this);
@@ -54,4 +55,4 @@ namespace CalculadoraFinanceira.Models.Classes
 
     }
 
-}
+

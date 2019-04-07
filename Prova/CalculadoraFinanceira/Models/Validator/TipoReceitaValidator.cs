@@ -9,23 +9,23 @@ namespace CalculadoraFinanceira.Models.Validator
 {
     public class TipoReceitaValidator : AbstractValidator<TipoReceita>
     {
-        CalculadoraFinanceiraContext db = null;
+     //   CalculadoraFinanceiraContext db = null;
 
         public TipoReceitaValidator()
         {
-            this.db = new CalculadoraFinanceiraContext();
+       //     this.db = new CalculadoraFinanceiraContext();
             RuleFor(tipoDespesa => tipoDespesa.Nome).MaximumLength(255).WithMessage("Máximo de 255 caracteres");
-            RuleFor(tipoDespesa => tipoDespesa.Nome).Must(UniqueName).WithMessage("Tipo de Categoria de Despesa Cadastrada");
+           // RuleFor(tipoDespesa => tipoDespesa.Nome).Must(UniqueName).WithMessage("Tipo de Categoria de Despesa Cadastrada");
         }
 
-        private bool UniqueName(String nome)
-        {
-            var result = this.db.TipoReceitas
-                                 .Where(x => x.Nome.ToLower() == nome.ToLower())
-                                 .Count();
+        //private bool UniqueName(String nome)
+        //{
+        //    var result = this.db.TipoReceitas
+        //                         .Where(x => x.Nome.ToLower() == nome.ToLower())
+        //                         .Count();
 
-            return result == 0;
-        }
+        //    return result == 0;
+        //}
 
     }
 
