@@ -7,7 +7,7 @@ using System.Web;
 
 namespace CalculadoraFinanceira.Models.Classes
 {
-    public class ListarDespesa //: IValidatableObject
+    public class ListarDespesa // : IValidatableObject
     {
         public int Id { get; set; }
         public String Nome { get; set; }
