@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CalculadoraFinanceira.Models.Classes
 {
@@ -30,6 +32,8 @@ namespace CalculadoraFinanceira.Models.Classes
 
     public class ParcelaReceita
     {
+        private decimal _numeroParcelas;
+
         public TipoParcela FormaReceita { get; set; }
 
         public enum TipoParcela
@@ -38,9 +42,11 @@ namespace CalculadoraFinanceira.Models.Classes
             Unica,
             [Description("Parcelada")]
             Parcelado
-          }
+        }
 
-        public int NumeroParcelas { get; set; }
+        [DisplayName("Parcelas")]
+        [UIHint("ListarParcelas")]
+        public decimal NumeroParcelas { get; set; }
 
     }
 }

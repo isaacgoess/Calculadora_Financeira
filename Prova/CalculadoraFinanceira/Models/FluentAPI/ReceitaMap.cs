@@ -30,7 +30,7 @@ namespace CalculadoraFinanceira.Models.FluentAPI
             Property(receita => receita.Descricao).HasMaxLength(255).IsRequired().HasColumnType("Varchar");
             Property(receita => receita.Valor).IsRequired().HasColumnType("float");
             Property(receita => receita.Parcela.FormaReceita).IsRequired().HasColumnType("int").HasColumnName("TipoRecebimento");
-            Property(receita => receita.Parcela.NumeroParcelas).IsRequired().HasColumnType("int").HasColumnName("NumeroParcelas");
+            Property(receita => receita.Parcela.NumeroParcelas).IsRequired().HasColumnType("decimal").HasColumnName("NumeroParcelas");
             //FormaRecebimento
 
         }

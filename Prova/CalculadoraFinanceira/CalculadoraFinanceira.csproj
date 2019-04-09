@@ -288,6 +288,7 @@
     <Content Include="Views\TipoReceita\Details.cshtml" />
     <Content Include="Views\TipoReceita\Edit.cshtml" />
     <Content Include="Views\TipoReceita\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ListarParcelas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
