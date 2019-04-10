@@ -43,7 +43,6 @@ namespace CalculadoraFinanceira.Models.Classes
             Parcelado
         }
 
-        [DisplayName("Parcelas")]
         public int NumeroParcelas { get; set; }
 
     }

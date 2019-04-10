@@ -45,7 +45,7 @@
                 @Html.DisplayFor(modelItem => item.Situacao)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Valor)
+                @Html.Raw(String.Format("R$ {0:n2}", item.Valor))
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
@@ -54,5 +54,15 @@
             </td>
         </tr>
     }
-
+    <tfoot class="footer">
+        <tr>
+            <td><b>Total</b></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>@Html.Raw(String.Format("<b>R$ {0:n2}</b>", @Model.Sum(i => i.Valor)))</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tfoot>
 </table>
