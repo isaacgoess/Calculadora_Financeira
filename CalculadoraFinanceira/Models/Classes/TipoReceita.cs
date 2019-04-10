@@ -8,9 +8,13 @@ namespace CalculadoraFinanceira.Models.Classes
 {
     public class TipoReceita : IValidatableObject
     {
+        public TipoReceita()
+        {
+            this.Receitas = new HashSet<Receita>();
+        }
         public int Id { get; set; }
         public String Nome { get; set; }
-
+        public virtual ICollection<Receita> Receitas { get; set; }
 
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
